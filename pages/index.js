@@ -4,8 +4,9 @@ import Head from "next/head";
 import FeaturedPosts from "../components/home-page/featured-posts";
 import Hero from "../components/home-page/hero";
 import { getFeaturedPosts } from "../lib/posts-util";
-import { getFeaturedEvents } from "../dummy-data";
+// import { getFeaturedEvents } from "../dummy-data";
 import EventList from "../components/events/event-list";
+import { getFeaturedEvents } from "../helpers/api-util";
 
 function HomePage(props) {
   const featuredEvents = getFeaturedEvents();
@@ -23,19 +24,30 @@ function HomePage(props) {
     //   <FeaturedPosts posts={props.posts} />
     // </Fragment>
     <Fragment>
-      <EventList items={featuredEvents} />
+      <EventList items={props.events} />
     </Fragment>
   );
 }
 
-export function getStaticProps() {
-  const featuredPosts = getFeaturedPosts();
+export async function getStaticProps() {
+  const featuredEvents = await getFeaturedEvents();
 
   return {
     props: {
-      posts: featuredPosts,
+      events: featuredEvents,
     },
+    revalidate: 1800
   };
 }
+
+// export function getStaticProps() {
+//   const featuredPosts = getFeaturedPosts();
+
+//   return {
+//     props: {
+//       posts: featuredPosts,
+//     },
+//   };
+// }
 
 export default HomePage;
