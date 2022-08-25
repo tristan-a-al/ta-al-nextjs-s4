@@ -1,8 +1,6 @@
 import { MongoClient } from "mongodb";
 const url =
-  "mongodb+srv://CheeseAdvocate:ion4yxagT77BITj8@ta-al-mdb-cluster.ypoozwp.mongodb.net/?retryWrites=true&w=majority";
-// const un = "CheeseAdvocate";
-// const pw = "ion4yxagT77BITj8";
+  "mongodb+srv://un:pw@cluster.ypoozwp.mongodb.net/?retryWrites=true&w=majority";
 // const SORT_ASC = +1;
 // const SORT_DESC = -1;
 

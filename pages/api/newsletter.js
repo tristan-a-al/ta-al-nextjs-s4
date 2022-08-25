@@ -1,10 +1,6 @@
 import { connectDatabase, insertDocument } from "../../helpers/db-util";
 
 // import { MongoClient } from "mongodb";
-// const url =
-//   "mongodb+srv://CheeseAdvocate:ion4yxagT77BITj8@ta-al-mdb-cluster.ypoozwp.mongodb.net/?retryWrites=true&w=majority";
-// // const un = "CheeseAdvocate";
-// // const pw = "ion4yxagT77BITj8";
 
 // async function connectDatabase() {
 //   const client = await MongoClient.connect(url);
